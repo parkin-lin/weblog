@@ -6,12 +6,22 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cm": "cz"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^5.4.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/cz-commitlint": "^19.8.0",
+    "@unocss/reset": "66.1.0-beta.3",
+    "commitizen": "^4.3.1",
+    "simple-git-hooks": "^2.11.1",
+    "unocss": "66.1.0-beta.3"
   }
 }
