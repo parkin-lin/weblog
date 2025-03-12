@@ -3,33 +3,6 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
-
-:root {
-  --accent: cyan;
-  --accent-dark: #000d8a;
-  --black: black;
-  --white: white;
-  --gray: 96, 115, 159;
-  --gray-light: 229, 233, 240;
-  --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
-  --line-height: 1.7;
-  font: 18px / var(--line-height) 'Fira Code', monospace;
-  --font: 1rem / var(--line-height) 'Fira Code', monospace;
-  --letter-spacing: 0.12rem;
-  --word-spacing: 0.16rem;
-  --p-spacing: 2rem;
-  /* text-align: left; */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: var(--white);
-  margin: 0;
-  padding: 0;
-  background: var(--black) no-repeat;
-  background-size: 100% 600px;
-}
 @font-face {
   font-family: 'Fira Code', monospace;
   src: url('/fonts/FiraCode-Regular.woff') format('woff');
@@ -44,9 +17,34 @@
   font-style: normal;
   font-display: swap;
 }
+:root {
+  --warning: #ff0;
+  --danger: #f00;
+  --accent: cyan;
+  --black: black;
+  --white: white;
+  --gray: 96, 115, 159;
+  --gray-light: 229, 233, 240;
+  --gray-dark: 34, 41, 57;
+  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
+    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+  --line-height: 1.8;
+  font: 18px / var(--line-height) 'Fira Code', monospace;
+  --font: 1rem / var(--line-height) 'Fira Code', monospace;
+  --letter-spacing: 0.12rem;
+  --word-spacing: 0.16rem;
+  --p-spacing: 2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  background: var(--black) no-repeat;
+  background-size: 100% 600px;
+}
 pre {
-  padding: 1rem;
-  border-radius: 8px;
+  --uno: p-xy border-rd-2;
 }
 code,
 pre > code {
@@ -58,6 +56,10 @@ code {
   color: var(--black);
   background-color: var(--white);
   border-radius: 2px;
+}
+body {
+  --uno: flex flex-col h-screen;
+  justify-self: anchor-center;
 }
 main {
   width: 720px;
@@ -87,10 +89,10 @@ b {
   --uno: fw-bold font-size-xl;
 }
 a {
-  text-decoration: cyan underline;
+  text-decoration: var(--accent) underline 3px;
 }
 a:hover {
-  color: black;
+  color: var(--black);
   background-color: var(--accent);
 }
 p,

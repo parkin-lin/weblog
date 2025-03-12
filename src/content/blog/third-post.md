@@ -1,6 +1,6 @@
 ---
-title: 'Third post'
-description: 'Lorem ipsum dolor sit amet'
+title: 'ES2024 Array Grouping: A Deep Dive'
+description: 'A deep dive into the Array Grouping feature in ES2024'
 pubDate: 'Jul 22 2022'
 heroImage: '/blog-placeholder-2.jpg'
 ---

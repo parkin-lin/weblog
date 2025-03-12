@@ -1,6 +1,6 @@
 ---
-title: 'Second post'
-description: 'Lorem ipsum dolor sit amet'
+title: 'ES2024 Yearly: Must-knows'
+description: 'ES2024 编年史'
 pubDate: 'Jul 15 2022'
 heroImage: '/blog-placeholder-4.jpg'
 ---
