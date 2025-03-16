@@ -1,0 +1,63 @@
+---
+const { page } = Astro.props
+---
+
+<nav class="flex justify-center">
+  <ul class="list-none flex items-baseline gap-4">
+    <li>
+      {
+        page.url.first ? (
+          <a href={page.url.prev} class="allow">
+            Previous
+          </a>
+        ) : (
+          <a href={page.url.first} class="disallow">
+            Previous
+          </a>
+        )
+      }
+    </li>
+    <li>
+      Page&nbsp;<b>{page.currentPage}</b>&nbsp;of&nbsp;<strong
+        >{page.lastPage}</strong
+      >
+    </li>
+    <li>
+      {
+        page.url.last ? (
+          <a href={page.url.next} class="allow">
+            Next
+          </a>
+        ) : (
+          <a href={page.url.last} class="disallow">
+            Next
+          </a>
+        )
+      }
+    </li>
+  </ul>
+</nav>
+<style>
+  nav a {
+    padding: 0.5rem;
+    text-decoration: none;
+  }
+  nav a.active {
+    color: var(--accent);
+  }
+  .disallow {
+    color: var(--gray);
+    &:hover {
+      cursor: not-allowed;
+      background: transparent;
+    }
+  }
+  .allow {
+    color: var(--white);
+    border: 1px solid var(--accent);
+    &:hover {
+      color: var(--black);
+      background-color: var(--accent);
+    }
+  }
+</style>
