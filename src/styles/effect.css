@@ -1,0 +1,25 @@
+.text-flip {
+  --duration: 0.3s;
+
+  overflow-y: clip;
+  > * {
+    display: inline-block;
+    transition: transform var(--duration) ease-in-out,
+      translate 0ms calc(var(--duration) / 2), color 0s;
+  }
+
+  &:is(:hover, :focus-within) > * {
+    transform: translateY(-2lh);
+    translate: 0 2lh;
+    color: var(--accent);
+  }
+
+  &:focus-within {
+    outline: 2px solid;
+    border-radius: 4px;
+
+    > *:focus {
+      outline: none;
+    }
+  }
+}

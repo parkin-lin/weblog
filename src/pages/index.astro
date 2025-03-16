@@ -2,13 +2,8 @@
 import BaseHead from '@/components/BaseHead.astro'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import { SITE_TITLE, SITE_DESCRIPTION, MAXIM, TECH_STACK } from '../consts'
 import AboutContentEn from '../config/en/about.mdx'
-
-const font = {
-  family: 'Fira Code',
-  href: 'https://github.com/tonsky/FiraCode',
-}
 ---
 
 <!doctype html>
@@ -19,16 +14,32 @@ const font = {
   <body>
     <Header />
     <main>
-      <h1>Debug Myself; then Fix Me...</h1>
+      <h1>{MAXIM}</h1>
       <AboutContentEn />
-      <p>Here are some ideas about this website:</p>
+      <header class="mt-2rem">
+        <div class="flex gap-2 justify-center sm:justify-start items-center">
+          <span class="relative flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan"
+            ></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan"
+            ></span>
+          </span>
+           All systems normal, powered by the following trendy Tech Stack:
+        </div>
+      </header>
       <ul>
-        <li>
-          <a href={font.href}>
-            {font.family}
-          </a>
-           : open-source monospaced sans-serif font (most popular on GitHub)
-        </li>
+        {
+          TECH_STACK.map((tech) => (
+            <li>
+              <a href={tech.url} target="_blank" class="p1">
+                <strong>{tech.name}</strong>
+              </a>
+              <span>: {tech.desc}</span>
+            </li>
+          ))
+        }
+        <li>...</li>
       </ul>
     </main>
     <Footer />

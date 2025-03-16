@@ -1,0 +1,35 @@
+---
+const socialLinks = [
+  {
+    address: 'RSS Feed',
+    url: '/rss.xml',
+    icon: 'i-mdi-rss-box',
+  },
+  {
+    address: 'Follow Me on GitHub',
+    url: 'https://github.com/parkin-lin',
+    icon: 'i-mdi-github',
+  },
+  {
+    address: 'Follow Me on Twitter',
+    url: 'https://x.com/parkin_lin',
+    icon: 'i-mdi-twitter',
+  },
+]
+---
+
+<div class="social-links">
+  {
+    socialLinks.map((link) => (
+      <a href={link.url} target="_blank">
+        <span class="sr-only">{link.address}</span>
+        <div class={link.icon} />
+      </a>
+    ))
+  }
+</div>
+<style>
+  .social-links {
+    --uno: flex flex-row justify-center gap-1rem my-1rem;
+  }
+</style>

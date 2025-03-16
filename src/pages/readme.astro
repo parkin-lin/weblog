@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/BlogPost.astro'
+import { SITE_DESCRIPTION } from '@/consts'
+---
+
+<Layout
+  title="Read Me"
+  description={SITE_DESCRIPTION}
+  pubDate={new Date()}
+  heroImage="/blog-placeholder-about.jpg"
+>
+  <p><code>`Hello World!`</code> Nice to meet you~</p>
+  <p>My name is <b>Parkin Lin</b>, a web lover, coder and writer.</p>
+  <p>
+    I'll write and share some technical blogs on this website, and hope that
+    could help you, too.
+  </p>
+  <p>Happy Coding ^_^</p>
+</Layout>
