@@ -10,6 +10,7 @@
     "cm": "cz"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.2.4",
     "@astrojs/mdx": "^4.1.0",
     "@astrojs/react": "^4.2.1",
     "@astrojs/rss": "^4.0.11",

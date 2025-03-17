@@ -5,11 +5,12 @@ import sitemap from '@astrojs/sitemap'
 import UnoCSS from 'unocss/astro'
 import react from '@astrojs/react'
 import rehypeLinks from 'rehype-external-links'
+import cloudflare from '@astrojs/cloudflare'
 
 const isDev = import.meta.env.DEV
 
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://weblog.pages.dev',
   integrations: [react(), mdx(), sitemap(), UnoCSS({ injectReset: true })],
   markdown: {
     rehypePlugins: [
@@ -29,4 +30,6 @@ export default defineConfig({
   devToolbar: {
     enabled: isDev,
   },
+  output: 'server',
+  adapter: cloudflare(),
 })
