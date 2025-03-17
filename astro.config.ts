@@ -30,6 +30,5 @@ export default defineConfig({
   devToolbar: {
     enabled: isDev,
   },
-  output: 'server',
   adapter: cloudflare(),
 })
