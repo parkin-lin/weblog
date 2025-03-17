@@ -29,6 +29,9 @@ importers:
       '@giscus/react':
         specifier: ^3.1.0
         version: 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@giscus/vue':
+        specifier: ^3.1.1
+        version: 3.1.1(vue@3.5.13(typescript@5.8.2))
       astro:
         specifier: ^5.4.2
         version: 5.5.2(@types/node@22.13.10)(jiti@2.4.2)(rollup@4.35.0)(typescript@5.8.2)
@@ -725,6 +728,11 @@ packages:
     peerDependencies:
       react: ^16 || ^17 || ^18 || ^19
       react-dom: ^16 || ^17 || ^18 || ^19
+
+  '@giscus/vue@3.1.1':
+    resolution: {integrity: sha512-xgsc93MibRQ0d1glBxN1BrEREHTIf3BPYs/3R+UZHNqawFFoWBV6iJ7uVCXMqoEKZdE2c78B3aKt5gfGqo8I5A==}
+    peerDependencies:
+      vue: '>=3.2.0'
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
@@ -4088,6 +4096,11 @@ snapshots:
       giscus: 1.6.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
+
+  '@giscus/vue@3.1.1(vue@3.5.13(typescript@5.8.2))':
+    dependencies:
+      giscus: 1.6.0
+      vue: 3.5.13(typescript@5.8.2)
 
   '@iconify-json/mdi@1.2.3':
     dependencies:

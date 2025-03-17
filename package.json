@@ -17,6 +17,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vue": "^5.0.7",
     "@giscus/react": "^3.1.0",
+    "@giscus/vue": "^3.1.1",
     "astro": "^5.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
