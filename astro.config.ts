@@ -3,15 +3,16 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import UnoCSS from 'unocss/astro'
-import react from '@astrojs/react'
+// import react from '@astrojs/react'
+import vue from '@astrojs/vue'
 import rehypeLinks from 'rehype-external-links'
-import cloudflare from '@astrojs/cloudflare'
+// import cloudflare from '@astrojs/cloudflare'
 
 const isDev = import.meta.env.DEV
 
 export default defineConfig({
   site: 'https://weblog.pages.dev',
-  integrations: [react(), mdx(), sitemap(), UnoCSS({ injectReset: true })],
+  integrations: [vue(), mdx(), sitemap(), UnoCSS({ injectReset: true })],
   markdown: {
     rehypePlugins: [
       [
@@ -30,6 +31,6 @@ export default defineConfig({
   devToolbar: {
     enabled: isDev,
   },
-  output: 'static',
-  adapter: cloudflare(),
+  // adapter: cloudflare(),
+  // output: 'server',
 })
