@@ -18,6 +18,7 @@
     "@astrojs/vue": "^5.0.7",
     "@giscus/vue": "^3.1.1",
     "astro": "^5.4.2",
+    "giscus": "^1.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rehype-external-links": "^3.0.0",

@@ -32,6 +32,9 @@ importers:
       astro:
         specifier: ^5.4.2
         version: 5.5.2(@types/node@22.13.10)(jiti@2.4.2)(rollup@4.35.0)(typescript@5.8.2)
+      giscus:
+        specifier: ^1.6.0
+        version: 1.6.0
       react:
         specifier: ^19.0.0
         version: 19.0.0
