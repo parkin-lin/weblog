@@ -26,9 +26,6 @@ importers:
       '@astrojs/vue':
         specifier: ^5.0.7
         version: 5.0.7(@types/node@22.13.10)(astro@5.5.2(@types/node@22.13.10)(jiti@2.4.2)(rollup@4.35.0)(typescript@5.8.2))(jiti@2.4.2)(rollup@4.35.0)(vue@3.5.13(typescript@5.8.2))
-      '@giscus/react':
-        specifier: ^3.1.0
-        version: 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@giscus/vue':
         specifier: ^3.1.1
         version: 3.1.1(vue@3.5.13(typescript@5.8.2))
@@ -722,12 +719,6 @@ packages:
   '@fastify/busboy@2.1.1':
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
-
-  '@giscus/react@3.1.0':
-    resolution: {integrity: sha512-0TCO2TvL43+oOdyVVGHDItwxD1UMKP2ZYpT6gXmhFOqfAJtZxTzJ9hkn34iAF/b6YzyJ4Um89QIt9z/ajmAEeg==}
-    peerDependencies:
-      react: ^16 || ^17 || ^18 || ^19
-      react-dom: ^16 || ^17 || ^18 || ^19
 
   '@giscus/vue@3.1.1':
     resolution: {integrity: sha512-xgsc93MibRQ0d1glBxN1BrEREHTIf3BPYs/3R+UZHNqawFFoWBV6iJ7uVCXMqoEKZdE2c78B3aKt5gfGqo8I5A==}
@@ -4090,12 +4081,6 @@ snapshots:
     optional: true
 
   '@fastify/busboy@2.1.1': {}
-
-  '@giscus/react@3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      giscus: 1.6.0
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@giscus/vue@3.1.1(vue@3.5.13(typescript@5.8.2))':
     dependencies:

@@ -11,7 +11,7 @@ import rehypeLinks from 'rehype-external-links'
 const isDev = import.meta.env.DEV
 
 export default defineConfig({
-  site: 'https://weblog.pages.dev',
+  site: 'https://weblog-xe2.pages.dev',
   integrations: [vue(), mdx(), sitemap(), UnoCSS({ injectReset: true })],
   markdown: {
     rehypePlugins: [
