@@ -7,8 +7,8 @@
       translate 0ms calc(var(--duration) / 2), color 0s;
   }
   &:is(:hover) > * {
+    color: var(--accent);
     transform: translateY(-2lh);
     translate: 0 2lh;
-    color: var(--accent);
   }
 }

@@ -1,6 +1,6 @@
 ---
-import HeaderLink from './HeaderLink.astro'
-import { SITE_TITLE } from '../consts'
+import HeaderLink from '@/components/HeaderLink.astro'
+import { SITE_TITLE } from '@/consts'
 import SocialLinks from '@/components/SocialLinks.astro'
 
 const routes = [
@@ -9,7 +9,7 @@ const routes = [
     name: 'Home',
   },
   {
-    pathname: '/blog',
+    pathname: '/blog/page',
     name: 'Blog',
   },
   {
