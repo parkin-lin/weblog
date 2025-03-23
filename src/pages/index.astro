@@ -1,47 +1,57 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION, MAXIM, TECH_STACK } from '../consts'
+import { MAXIM, TECH_STACK } from '@/consts'
 import AboutContentEn from '@/config/en/about.mdx'
-import BaseHead from '@/components/BaseHead.astro'
-import Header from '@/components/Header.astro'
-import Footer from '@/components/Footer.astro'
+import HolyGrail from '@/layouts/HolyGrail.astro'
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>{MAXIM}</h1>
+<HolyGrail>
+  <div class="main">
+    <div class="snake">
       <AboutContentEn />
-      <header class="mt-2rem">
-        <div class="flex gap-2 justify-center sm:justify-start items-center">
-          <span class="relative flex h-3 w-3">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan"
-            ></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan"
-            ></span>
-          </span>
-           All set, powered by the following trendy Tech Stack:
-        </div>
-      </header>
-      <ul>
-        {
-          TECH_STACK.map((tech) => (
-            <li>
-              <a href={tech.url} target="_blank" class="p1">
-                <strong>{tech.name}</strong>
-              </a>
-              <span>: {tech.desc}</span>
-            </li>
-          ))
-        }
-        <li>...</li>
-      </ul>
-    </main>
-    <Footer />
-  </body>
-</html>
+    </div>
+    <div
+      class="flex gap-2 justify-center sm:justify-start items-center my-2rem"
+    >
+      <span class="relative flex h-3 w-3">
+        <span
+          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan"
+        ></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan"></span>
+      </span>
+      <strong
+        >&nbsp;All set, powered by the following trendy <b>Tech Stack</b
+        ></strong
+      >
+    </div>
+    <ul>
+      {
+        TECH_STACK.map((tech) => (
+          <li>
+            <a href={tech.url} target="_blank">
+              <strong>{tech.name}</strong>
+            </a>
+            <span>: {tech.desc}</span>
+          </li>
+        ))
+      }
+      <li>...</li>
+    </ul>
+  </div>
+</HolyGrail>
+<style>
+  div.main {
+    --uno: place-items-center;
+
+    div.snake {
+      --uno: w-full;
+
+      img {
+        --uno: w-full;
+      }
+    }
+
+    ul {
+      list-style: inside;
+    }
+  }
+</style>

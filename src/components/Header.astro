@@ -9,8 +9,12 @@ const routes = [
     name: 'Home',
   },
   {
-    pathname: '/blog/page',
+    pathname: '/blog',
     name: 'Blog',
+  },
+  {
+    pathname: '/tag',
+    name: 'Tags',
   },
   {
     pathname: '/readme',
@@ -34,34 +38,39 @@ const routes = [
 </header>
 <style>
   header {
-    margin-top: 1rem;
-    padding: 0 1rem;
-    background: transparent;
-    box-shadow: 0 2px 8px rgba(var(--accent), 5%);
-  }
-  h2 {
-    margin: 0;
-  }
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav a {
-    padding: 0.1rem 0.5rem;
-    color: var(--white);
-    text-decoration: none;
-  }
-  nav a.active {
-    color: var(--accent);
-    text-decoration: var(--accent) wavy underline;
-  }
-  nav a:hover {
-    color: var(--black);
-    background-color: var(--accent);
+    grid-column: 1 / -1;
+    --uno: grid;
+    /* grid-template-columns: 1fr 3fr 1fr; */
+    grid-template-columns: 1fr 2fr 1fr;
+    border-bottom: var(--b-solid);
+    border-color: var(--gray);
+
+    nav {
+      --uno: flex items-center justify-between;
+      grid-column: 2 / -2;
+
+      /* &::before,
+      &::after {
+        --uno: content-none;
+      }
+      &::before {
+      }
+      &::after {
+      } */
+
+      a {
+        --uno: decoration-none;
+
+        &.active {
+          color: var(--accent);
+          text-decoration: var(--accent) wavy underline;
+          text-underline-position: under;
+        }
+
+        &:hover {
+          --uno: fw-bold c-[var(--black)] bg-[var(--accent)];
+        }
+      }
+    }
   }
 </style>

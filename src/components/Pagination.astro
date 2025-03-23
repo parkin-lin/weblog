@@ -2,13 +2,13 @@
 const { page } = Astro.props
 ---
 
-<nav class="flex justify-center">
-  <ul class="list-none flex items-baseline gap-4">
+<nav class="pagination">
+  <ul>
     <li>
       {
         page.url.first ? (
           <a href={page.url.prev} class="allow">
-            Previous
+            <strong>&lt;&nbsp;Previous</strong>
           </a>
         ) : (
           <a href={page.url.first} class="disallow">
@@ -26,7 +26,7 @@ const { page } = Astro.props
       {
         page.url.last ? (
           <a href={page.url.next} class="allow">
-            Next
+            <strong>Next&nbsp;&gt;</strong>
           </a>
         ) : (
           <a href={page.url.last} class="disallow">
@@ -38,26 +38,37 @@ const { page } = Astro.props
   </ul>
 </nav>
 <style>
-  nav a {
-    padding: 0.5rem;
-    text-decoration: none;
-  }
-  nav a.active {
-    color: var(--accent);
-  }
-  .disallow {
-    color: var(--gray);
-    &:hover {
-      cursor: not-allowed;
-      background: transparent;
-    }
-  }
-  .allow {
-    color: var(--white);
-    border: 1px solid var(--accent);
-    &:hover {
-      color: var(--black);
-      background-color: var(--accent);
+  nav.pagination {
+    ul {
+      --uno: list-none w-full flex items-baseline text-center;
+
+      li {
+        flex: 1 1 0;
+
+        a {
+          --uno: block w-full decoration-none;
+
+          &.disallow {
+            color: var(--gray);
+
+            &:hover {
+              --uno: cursor-not-allowed bg-transparent;
+            }
+          }
+
+          &.allow {
+            color: var(--white);
+            border: var(--b-solid);
+            border-color: var(--accent);
+
+            &:hover {
+              --uno: fw-bold;
+              color: var(--black);
+              background-color: var(--accent);
+            }
+          }
+        }
+      }
     }
   }
 </style>

@@ -1,0 +1,159 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import HolyGrail from '@/layouts/HolyGrail.astro'
+import FormattedDate from '@/components/FormattedDate.astro'
+import Giscus from '@/components/Giscus.astro'
+
+type Props = CollectionEntry<'blog'>['data']
+
+const { title, pubDate, heroImage } = Astro.props
+---
+
+<HolyGrail>
+  <div class="mdx">
+    <article>
+      <div class="hero-image">
+        {heroImage && <img src={heroImage} alt="" />}
+      </div>
+      <h1>{title}</h1>
+      <p>
+        <FormattedDate date={pubDate} />
+      </p>
+      <hr />
+      <slot />
+      <Giscus />
+    </article>
+    <aside></aside>
+  </div>
+  <!-- <aside slot="aside">table of contents</aside> -->
+</HolyGrail>
+
+<style>
+  div.mdx {
+    /* grid-column: 2 / -2; */
+    --uno: grid;
+    grid-template-columns: 3fr 1fr;
+
+    article {
+      grid-column: 1 / 4;
+    }
+    aside {
+      grid-column: 4 / 5;
+    }
+
+    .hero-image {
+      --uno: w-full;
+
+      & img {
+        --uno: w-full block mx-auto rd-xl;
+        /* box-shadow: var(--box-shadow); */
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      --uno: fw-bold font-size-xl text-left capitalize
+        line-height-[var(--line-height)] c-[var(--accent)] my-[var(--p-spacing)];
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    strong,
+    b {
+      --uno: fw-bold font-size-xl;
+    }
+    b {
+      --uno: c-[var(--accent)];
+    }
+
+    pre,
+    p {
+      --uno: my-[var(--p-spacing)];
+    }
+
+    pre {
+      --uno: pxy border-rd-2;
+    }
+
+    code,
+    pre > code {
+      all: unset;
+      font: var(--font);
+    }
+
+    code {
+      --uno: p-[var(--word-spacing)] c-[var(--black)] bg-[var(--white)] b-rd-sm;
+    }
+
+    blockquote {
+      --uno: font-size-base pl;
+      border-left: 4px solid var(--accent);
+    }
+
+    table {
+      --uno: text-left;
+      border-top: var(--b-solid);
+      border-color: var(--accent);
+
+      thead {
+        --uno: bg-[var(--accent)] c-[var(--black)];
+      }
+
+      tr {
+        border-bottom: var(--b-solid);
+        border-color: var(--gray);
+
+        th,
+        td {
+          --uno: p2;
+        }
+      }
+    }
+
+    ol,
+    ul {
+      --uno: m0 p0 list-disc-inside;
+
+      & ul,
+      & ol {
+        --uno: pl4;
+
+        li {
+          --uno: pl4;
+          /* text-indent: -1rem; */
+        }
+      }
+    }
+    ol {
+      list-style-type: decimal-leading-zero;
+    }
+
+    section.footnotes {
+      &::before {
+        --uno: font-size-2xl fw-bold c-[var(--accent)];
+        content: 'Footnotes';
+      }
+
+      ol {
+        --uno: my4xl;
+
+        li {
+          --uno: p0;
+
+          p {
+            --uno: inline;
+          }
+        }
+      }
+    }
+  }
+</style>

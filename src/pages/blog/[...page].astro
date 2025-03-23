@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content'
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts'
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Pagination from '@/components/Pagination.astro'
+import Footer from '@/components/Footer.astro'
+import HolyGrail from '@/layouts/HolyGrail.astro'
+
+import FormattedDate from '@/components/FormattedDate.astro'
+
+export async function getStaticPaths({ paginate }) {
+  const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  )
+
+  return paginate(posts, { pageSize: 3 })
+}
+const { page } = Astro.props
+
+const postsByYear = page.data.reduce((acc, post) => {
+  const year = post.data.pubDate.getFullYear().toString()
+  ;(acc[year] ??= []).push(post)
+  return acc
+}, Object.create(null))
+
+const years = Object.keys(postsByYear).sort((a, b) => parseInt(b) - parseInt(a))
+---
+
+<HolyGrail>
+  <div class="main">
+    <div class="link">
+      <ul>
+        {
+          years.map((year) => (
+            <li>
+              <section>
+                <h2>{year}</h2>
+                <ul>
+                  {postsByYear[year].map((post) => (
+                    <li>
+                      <span>
+                        <FormattedDate date={post.data.pubDate} />
+                      </span>
+                      <a href={`/blog/${post.id}/`}>
+                        <strong>{post.data.title}</strong>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <Pagination page={page} />
+  </div>
+  <!-- <aside slot="aside">All tags:</aside> -->
+</HolyGrail>
+
+<style>
+  div.main {
+    --uno: h-full flex flex-col justify-between;
+
+    div.link {
+      --uno: flex;
+
+      ul {
+        flex: 2 1 0;
+      }
+
+      aside {
+        flex: 1 1 0;
+      }
+    }
+  }
+</style>

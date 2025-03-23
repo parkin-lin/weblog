@@ -1,4 +1,4 @@
-@import './effect.css';
+@import '@/styles/effect.css';
 @font-face {
   font-family: 'Fira Code', monospace;
   src: url('/fonts/FiraCode-Regular.woff') format('woff');
@@ -20,11 +20,12 @@
   --black: black;
   --white: white;
   --gray: gray;
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+  --box-shadow: 0 2px 6px rgba(var(--white), 25%),
+    0 8px 24px rgba(var(--white), 33%), 0 16px 32px rgba(var(--white), 33%);
   --line-height: 1.8;
-  font: 18px / var(--line-height) 'Fira Code', monospace;
+  font: 16px / var(--line-height) 'Fira Code', monospace;
   --font: 1rem / var(--line-height) 'Fira Code', monospace;
+  --b-solid: 1px solid var(--white);
   --letter-spacing: 0.12rem;
   --word-spacing: 0.16rem;
   --p-spacing: 2rem;
@@ -36,38 +37,14 @@
   background: var(--black) no-repeat;
   background-size: 100% 600px;
 }
-pre {
-  --uno: p-xy border-rd-2;
-}
-code,
-pre > code {
-  all: unset;
-  font: var(--font);
-}
-code {
-  padding: var(--word-spacing);
-  color: var(--black);
-  background-color: var(--white);
-  border-radius: 2px;
-}
-body {
-  --uno: flex flex-col h-screen justify-self-center;
-}
-main {
-  width: 960px;
-  max-width: calc(100% - 10rem);
-  margin: auto;
-  padding: 3rem 1rem;
-}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  --uno: text-left fw-bold font-size-xl;
-  line-height: var(--line-height);
-  text-transform: capitalize;
+  --uno: text-left fw-bold font-size-xl line-height-[var(--line-height)];
   color: var(--accent);
 }
 h1 {
@@ -81,18 +58,18 @@ b {
   --uno: fw-bold font-size-xl;
 }
 b {
-  color: var(--accent);
+  --uno: c-[var(--accent)];
 }
 a {
+  --uno: p1;
   text-decoration: var(--accent) underline 3px;
 }
 a:hover {
   color: var(--black);
   background-color: var(--accent);
 }
-p,
-.prose p {
-  margin: 2rem 0;
+section {
+  --uno: my4xl;
 }
 textarea {
   width: 100%;
@@ -108,24 +85,6 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-}
-blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 0 0 0 20px;
-  margin: 0px;
-  font-size: 1rem;
-}
-hr {
-  border: none;
-  border-top: 1px solid var(--white);
-}
-ol,
-ul {
-  list-style: inside;
-  margin: 2rem 0;
-}
-ol {
-  list-style-type: decimal-leading-zero;
 }
 .sr-only {
   border: 0;
