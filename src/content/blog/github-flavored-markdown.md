@@ -1,15 +1,15 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jun 19 2023'
+title: 'Mastering GitHub Flavored Markdown'
+description: 'How to write blog and docs like a pro'
+pubDate: '2025-01-02'
 heroImage: '/blog-placeholder-1.jpg'
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+Here is a sample of some basic GFM[^2] syntax.
 
 ## Headings
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+The `<h1>` to `<h6>` HTML elements represent six levels of section headings. `<h1>` is the highest section level and `<h6>` is the lowest. By default, all heading elements create a block-level box in the layout, starting on a new line and taking up the full width available in their containing block.
 
 # H1
 
@@ -17,15 +17,7 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 ### H3
 
-#### H4
-
-##### H5
-
-###### H6
-
 ## Paragraph
-
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
@@ -43,7 +35,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ## Blockquotes
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+The `<blockquote>` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the `<cite>` element.
 
 ### Blockquote without attribution
 
@@ -83,12 +75,16 @@ The blockquote element represents content that is quoted from another source, op
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
+| _italics_ | **bold** | `code` |
+| _italics_ | **bold** | `code` |
 ```
 
 ### Output
 
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
+| _italics_ | **bold** | `code` |
+| _italics_ | **bold** | `code` |
 | _italics_ | **bold** | `code` |
 
 ## Code Blocks
@@ -169,7 +165,6 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 - Fruit
   - Apple
   - Orange
-  - Banana
 - Dairy
   - Milk
   - Cheese
@@ -182,8 +177,8 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
   - Orange
   - Banana
 - Dairy
-  - Milk
-  - Cheese
+  1. Milk
+  2. Cheese
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 
@@ -212,3 +207,5 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+[^2]: [GFM](https://github.github.com/gfm)
